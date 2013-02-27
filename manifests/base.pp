@@ -70,12 +70,12 @@ class { "apache::mod::php":
 apache::mod { "rewrite": }
 apache::mod { "headers": }
 
-apache::vhost { "symfony2.local":
+apache::vhost { "sites":
     priority    => "50",
     vhost_name  => "*",
     port        => "80",
-    docroot     => "/var/www/vhosts/symfony2.local/web",
-    serveradmin => "admin@symfony2.local",
+    docroot     => "/var/www/sites",
+    serveradmin => "admin@localhost",
     template    => "system/apache-default-vhost.erb",
     override    => "All",
 }
